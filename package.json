@@ -1,0 +1,15 @@
+{
+  "name": "mvp-comp3008",
+  "version": "1.0.0",
+  "description": "A password tester for COMP 3008 Project 2.",
+  "main": "index.js",
+  "author": "Wal Wal",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "client:start": "yarn --cwd client start"
+  }
+}
