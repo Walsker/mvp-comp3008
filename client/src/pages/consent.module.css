@@ -8,13 +8,13 @@
 }
 
 #title {
-  margin-bottom: 5px;
-}
-
-#subtitle {
-  margin-top: 5px;
+  margin: 10px 0;
 }
 
 #content {
-  margin: 25px 0;
+  margin: 15px 0;
+}
+
+#buttonContainer {
+  margin-top: 20px;
 }

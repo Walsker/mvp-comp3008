@@ -1,11 +1,11 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import styles from './button.module.css'
 
-const Button = ({ href, label }) => {
+const Button = ({ href, label, ...props }) => {
   if (href) {
     return (
       <div className={styles.container}>
-        <a className={styles.label} href={href}>
+        <a className={styles.label} href={href} {...props}>
           {label.toUpperCase()}
         </a>
       </div>
