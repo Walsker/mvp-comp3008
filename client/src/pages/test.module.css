@@ -1,0 +1,36 @@
+#container {
+  display: flex;
+  width: 100vw;
+  max-width: var(--pageWidth);
+  height: 100vh;
+  margin-top: 5vh;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#title {
+  margin-top: 5px;
+}
+
+#subtitle {
+  margin-bottom: 5px;
+}
+
+.display {
+  display: flex;
+  justify-content: space-around;
+  justify-content: center;
+  width: max-content;
+  padding: 25px;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px 0;
+}
