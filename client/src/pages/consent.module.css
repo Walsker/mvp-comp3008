@@ -11,10 +11,10 @@
   margin: 10px 0;
 }
 
-#content {
-  margin: 15px 0;
-}
-
 #buttonContainer {
   margin-top: 20px;
+}
+
+.content {
+  margin: 15px 0;
 }

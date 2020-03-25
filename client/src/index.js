@@ -2,14 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import { Home, Consent } from 'pages'
+import { Home, Consent, Instructions } from 'pages'
 import './index.css'
 
 const App = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path='/'>
-        <Consent />
+        <Instructions />
       </Route>
     </Switch>
   </BrowserRouter>

@@ -1,0 +1,39 @@
+#container {
+  display: flex;
+  width: 100vw;
+  max-width: var(--pageWidth);
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#title {
+  margin: 10px 0;
+}
+
+#content {
+  margin: 15px 0;
+}
+
+.splitContent {
+  display: flex;
+  width: 100%;
+  margin: 30px 0;
+}
+
+.pictureAsset {
+  display: flex;
+  height: 256px;
+  border-radius: 40px;
+}
+
+.quadrant {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 10px;
+  justify-content: center;
+  align-items: center;
+}
