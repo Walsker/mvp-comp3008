@@ -1,5 +1,7 @@
 * {
   --pageWidth: 1024px;
+  --pink: #fa709a;
+  --yellow: #ffc53f;
 }
 
 html {
@@ -21,7 +23,7 @@ body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(120deg, #ffc53f 0%, #fa709a 60%);
+  background: linear-gradient(120deg, var(--yellow) 0%, var(--pink) 60%);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
