@@ -1,7 +1,4 @@
 export { default as Home } from './home'
 export { default as Consent } from './consent'
 export { default as Instructions } from './instructions'
-export { default as Scenario } from './scenario'
-export { default as Halfway } from './halfway'
-export { default as Completion } from './completion'
-export { default as Test } from './test'
+export { default as Session } from './session'

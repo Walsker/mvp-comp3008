@@ -1,14 +1,31 @@
-import React, { useLayoutEffect, useRef, useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
+
 import styles from './button.module.css'
 
-const Button = ({ href, label, inverted, action, ...props }) => {
-  if (href && action) throw new Error('Please choose whether this button is a link or a normal button.')
+const Button = ({ href, label, inverted, action, linkTo, ...props }) => {
+  if ((href && (action || linkTo)) || (action && linkTo))
+    throw new Error('Please choose whether this button is a link or a normal button.')
   if (href) {
     return (
       <div className={styles.container}>
-        <a className={inverted ? styles.labelInverted : styles.label} href={href} {...props}>
+        <a
+          className={inverted ? styles.labelInverted : styles.label}
+          href={href}
+          target='_blank'
+          rel='noopener noreferrer'
+          {...props}
+        >
           {label.toUpperCase()}
         </a>
+      </div>
+    )
+  } else if (linkTo) {
+    return (
+      <div className={styles.container}>
+        <Link className={inverted ? styles.labelInverted : styles.label} to={linkTo} {...props}>
+          {label.toUpperCase()}
+        </Link>
       </div>
     )
   } else {

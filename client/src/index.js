@@ -1,18 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { Home, Consent, Instructions, Scenario, Halfway, Completion, Test } from 'pages'
+import { Home, Consent, Instructions, Session } from 'pages'
 import './index.css'
 
 const App = () => (
-  <BrowserRouter>
+  <Router>
     <Switch>
-      <Route exact path='/'>
-        <Test />
-      </Route>
+      <Route exact path='/' component={Home} />
+      <Route path='/consent' component={Consent} />
+      <Route path='/instructions' component={Instructions} />
+      <Route path='/session' component={Session} />
     </Switch>
-  </BrowserRouter>
+  </Router>
 )
 
 ReactDOM.render(<App />, document.getElementById('root'))

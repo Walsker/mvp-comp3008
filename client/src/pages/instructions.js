@@ -34,7 +34,7 @@ const Instructions = () => (
     <div id={styles.content}>
       <strong>For the integrity of the test, please refrain from using any memoranda.</strong>
     </div>
-    <Button label='Begin Test' href='https://songwhip.com/album/the-experience/love-me' />
+    <Button label='Begin Test' linkTo='/session' />
   </div>
 )
 

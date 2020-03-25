@@ -6,8 +6,13 @@ const Completion = () => (
   <div id={styles.container}>
     <h1 id={styles.title}>Test Complete</h1>
     <h2 id={styles.subtitle}>Thanks for participating!</h2>
-    <div id={styles.content}>Please fill out the following questionnaire regarding our test.</div>
-    <Button label='Questionnaire' href='https://songwhip.com/album/the-experience/love-me' />
+    <div id={styles.content}>
+      Please fill out the following questionnaire regarding our test.
+      <br />
+      <br />
+      Once complete, you are safe to close this page.
+    </div>
+    <Button label='Questionnaire' href='https://walsquared.ca' /> {/* TODO: Link questionnaire */}
   </div>
 )
 
