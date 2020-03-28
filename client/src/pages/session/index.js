@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch, useRouteMatch, Redirect } from 'react-router-dom'
 import { useSession } from 'hooks'
+import { setSession } from 'helpers/logger'
 import Completion from './completion'
 import Halfway from './halfway'
 import Scenario from './scenario'
@@ -12,7 +13,9 @@ const Session = () => {
   const [testCount, setTestCount] = useState(0)
   const session = useSession()
 
-  console.log('Session ID: ', session.id)
+  useEffect(() => {
+    setSession(session.id)
+  }, [])
 
   return (
     <Router>

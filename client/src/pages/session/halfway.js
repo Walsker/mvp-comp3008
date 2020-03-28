@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from 'components'
 import styles from './halfway.module.css'
+import { newEntry, EVENTS } from 'helpers/logger'
 
 const Halfway = () => (
   <div id={styles.container}>
@@ -13,7 +14,7 @@ const Halfway = () => (
       Are you ready?
     </div>
 
-    <Button label='Continue' linkTo='/session/test' />
+    <Button label='Continue' linkTo='/session/test' action={() => newEntry('N/A', EVENTS.halfwayContinue)} />
   </div>
 )
 

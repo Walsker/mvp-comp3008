@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 import styles from './button.module.css'
 
 const Button = ({ href, label, inverted, action, linkTo, ...props }) => {
-  if ((href && (action || linkTo)) || (action && linkTo))
-    throw new Error('Please choose whether this button is a link or a normal button.')
+  if (href && linkTo) throw new Error('Please choose whether this button is a html link or a router link.')
   if (href) {
     return (
       <div className={styles.container}>
         <a
           className={inverted ? styles.labelInverted : styles.label}
+          onClick={action}
           href={href}
           target='_blank'
           rel='noopener noreferrer'
@@ -23,7 +23,7 @@ const Button = ({ href, label, inverted, action, linkTo, ...props }) => {
   } else if (linkTo) {
     return (
       <div className={styles.container}>
-        <Link className={inverted ? styles.labelInverted : styles.label} to={linkTo} {...props}>
+        <Link className={inverted ? styles.labelInverted : styles.label} to={linkTo} onClick={action} {...props}>
           {label.toUpperCase()}
         </Link>
       </div>
