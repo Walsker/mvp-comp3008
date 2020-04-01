@@ -3,9 +3,17 @@ import { Link } from 'react-router-dom'
 
 import styles from './button.module.css'
 
-const Button = ({ href, label, inverted, action, linkTo, ...props }) => {
+const Button = ({ href, label, inverted, disabled, action, linkTo, ...props }) => {
   if (href && linkTo) throw new Error('Please choose whether this button is a html link or a router link.')
-  if (href) {
+  if (disabled) {
+    return (
+      <div className={styles.disabledContainer}>
+        <div className={inverted ? styles.labelInvertedDisabled : styles.labelDisabled} {...props}>
+          {label.toUpperCase()}
+        </div>
+      </div>
+    )
+  } else if (href) {
     return (
       <div className={styles.container}>
         <a

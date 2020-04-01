@@ -7,8 +7,16 @@ import Halfway from './halfway'
 import Scenario from './scenario'
 import Test from './test'
 
+const STATES = {
+  waiting: 'waiting',
+  attempting: 'attempting',
+  passed: 'passed',
+  failed: 'failed'
+}
+
 const Session = () => {
   const { path } = useRouteMatch()
+  const [sessionState, setSessionState] = useState(STATES.waiting)
   const [scenarioCount, setScenarioCount] = useState(0)
   const [testCount, setTestCount] = useState(0)
   const session = useSession()
@@ -17,6 +25,7 @@ const Session = () => {
     setSession(session.id)
   }, [])
 
+  console.log(sessionState)
   return (
     <Router>
       <Switch>
@@ -25,7 +34,15 @@ const Session = () => {
         </Route>
         <Route path={`${path}/halfway`} component={Halfway} />
         <Route path={`${path}/test`}>
-          <Test number={testCount} order={session.testOrder} next={() => setTestCount(testCount + 1)} />
+          <Test
+            number={testCount}
+            order={session.testOrder}
+            session={{ state: sessionState, setState: setSessionState }}
+            next={() => {
+              setTestCount(testCount + 1)
+              setSessionState(STATES.waiting)
+            }}
+          />
         </Route>
         <Route path={`${path}/completion`} component={Completion} />
         <Redirect to={`${path}/scenario`} />

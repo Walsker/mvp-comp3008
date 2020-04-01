@@ -1,11 +1,23 @@
-.container {
+.container,
+.disabledContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.disabledContainer {
+  opacity: 0.5;
 }
 
 .label,
-.labelInverted {
+.labelDisabled,
+.labelInverted,
+.labelInvertedDisabled {
   display: flex;
   flex-shrink: 0;
   justify-content: center;
@@ -23,12 +35,14 @@
   border-radius: 60px;
 }
 
-.label {
+.label,
+.labelDisabled {
   color: white;
   border-color: white;
 }
 
-.labelInverted {
+.labelInverted,
+.labelInvertedDisabled {
   color: black;
   border-color: black;
 }

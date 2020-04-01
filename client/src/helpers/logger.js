@@ -4,6 +4,7 @@ const EVENTS = {
   pwPracticeBad: 'pwPracticeBad',
   nextPage: 'nextPage',
   halfwayContinue: 'halfwayContinue',
+  pwTestStart: 'pwTestStart',
   pwTestGood: 'pwTestGood',
   pwTestBad: 'pwTestBad',
   pwInputDisabled: 'pwInputDisabled',
