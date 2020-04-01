@@ -17,13 +17,13 @@ const Test = ({ number, order, session, next }) => {
 
   const Input = () => {
     const onCorrect = () => {
-      newEntry(scenarios[number], EVENTS.pwPracticeGood)
+      newEntry(scenarios[number], EVENTS.pwTestGood)
       setIsAttempting(false)
       session.setState(STATES.passed)
     }
 
     const onIncorrect = () => {
-      newEntry(scenarios[number], EVENTS.pwPracticeBad)
+      newEntry(scenarios[number], EVENTS.pwTestBad)
       setIsAttempting(false)
       if (failedAttempts === 2) {
         session.setState(STATES.failed)
@@ -72,7 +72,12 @@ const Test = ({ number, order, session, next }) => {
           }}
         />
       ) : (
-        <Button label='Next' linkTo='/session/completion' action={() => newEntry('N/A', EVENTS.testComplete)} />
+        <Button
+          label='Next'
+          disabled={!(session.state === STATES.failed || session.state === STATES.passed)}
+          linkTo='/session/completion'
+          action={() => newEntry('N/A', EVENTS.testComplete)}
+        />
       )}
     </div>
   )

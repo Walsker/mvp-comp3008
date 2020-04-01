@@ -30,4 +30,21 @@ const newEntry = (scenario, event) => {
   return entry
 }
 
-export { setSession, newEntry, EVENTS }
+const save = async () => {
+  const response = await fetch(`${window.location.origin}/api/logs`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      id: sessionId,
+      logs
+    })
+  })
+
+  if (!response.ok) {
+    alert(`Something went wrong. Please let the test organizers know.\nError Code: ${response.status}`)
+  }
+}
+
+export { setSession, newEntry, EVENTS, save }

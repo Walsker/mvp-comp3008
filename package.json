@@ -10,6 +10,8 @@
     "express": "^4.17.1"
   },
   "scripts": {
-    "client:start": "yarn --cwd client start"
+    "client:start": "yarn --cwd client start",
+    "client:build": "yarn --cwd client build",
+    "start": "node index.js"
   }
 }
