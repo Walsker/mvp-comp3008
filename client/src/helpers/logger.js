@@ -24,7 +24,7 @@ const newEntry = (scenario, event) => {
     event
   }
 
-  console.log(entry)
+  // console.log(entry)
   logs.push(entry)
 
   return entry

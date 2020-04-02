@@ -25,17 +25,21 @@ const Session = () => {
     setSession(session.id)
   }, [])
 
-  console.log(sessionState)
   return (
     <Router>
       <Switch>
         <Route path={`${path}/scenario`}>
-          <Scenario number={scenarioCount} next={() => setScenarioCount(scenarioCount + 1)} />
+          <Scenario
+            number={scenarioCount}
+            password={session.passwords[scenarioCount]}
+            next={() => setScenarioCount(scenarioCount + 1)}
+          />
         </Route>
         <Route path={`${path}/halfway`} component={Halfway} />
         <Route path={`${path}/test`}>
           <Test
             number={testCount}
+            password={session.passwords[session.testOrder[testCount]]}
             order={session.testOrder}
             session={{ state: sessionState, setState: setSessionState }}
             next={() => {

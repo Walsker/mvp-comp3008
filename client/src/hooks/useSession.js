@@ -36,13 +36,11 @@ const useSession = () => {
   const [emailPassword] = useState(generatePassword())
   const [bankingPassword] = useState(generatePassword())
   const [schoolPassword] = useState(generatePassword())
-  const [testOrder] = useState(fisherYatesShuffle([1, 2, 3]))
+  const [testOrder] = useState(fisherYatesShuffle([0, 1, 2]))
 
   return {
     id,
-    emailPassword,
-    bankingPassword,
-    schoolPassword,
+    passwords: [emailPassword, bankingPassword, schoolPassword],
     testOrder
   }
 }

@@ -11,7 +11,8 @@ const STATES = {
   failed: 'failed'
 }
 
-const Test = ({ number, order, session, next }) => {
+const Test = ({ number, order, password, session, next }) => {
+  console.log(`Test: ${order[number]}, Password: ${password}`)
   const [isAttempting, setIsAttempting] = useState(false)
   const [failedAttempts, setFailedAttempts] = useState(0)
 
@@ -47,14 +48,14 @@ const Test = ({ number, order, session, next }) => {
         />
       )
     } else {
-      return <PasswordInput onCorrect={onCorrect} onIncorrect={onIncorrect} />
+      return <PasswordInput correctPassword={password} onCorrect={onCorrect} onIncorrect={onIncorrect} />
     }
   }
 
   return (
     <div id={styles.container}>
       <h2 id={styles.subtitle}>Password {number + 1}</h2>
-      <h1 id={styles.title}>{scenarios[order[number] - 1]}</h1>
+      <h1 id={styles.title}>{scenarios[order[number]]}</h1>
       <div className={styles.content}>
         Enter your password below.
         <div className={styles.display}>

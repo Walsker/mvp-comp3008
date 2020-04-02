@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
-import { Button, PasswordInput } from 'components'
+import { Button, PasswordDisplay, PasswordInput } from 'components'
 import styles from './scenario.module.css'
 import { newEntry, EVENTS } from 'helpers/logger'
 
 const scenarios = ['Email', 'Banking', 'School']
 
 // TODO: Pass in the sequence to display
-const Scenario = ({ number, next }) => {
+const Scenario = ({ number, password, next }) => {
+  console.log(`Scenario: ${number}, Password: ${password}`)
   useEffect(() => {
     newEntry('N/A', EVENTS.startTest)
   }, [])
@@ -17,12 +18,15 @@ const Scenario = ({ number, next }) => {
       <h1 id={styles.title}>{scenarios[number]}</h1>
       <div className={styles.content}>
         Your password is the following sequence of arrows:
-        <div className={styles.display}>{/* TODO: Arrows */}</div>
+        <div className={styles.display}>
+          <PasswordDisplay password={password} />
+        </div>
       </div>
       <div className={styles.content}>
         Practice your password with the input below.
         <div className={styles.display}>
           <PasswordInput
+            correctPassword={password}
             onCorrect={() => newEntry(scenarios[number], EVENTS.pwPracticeGood)}
             onIncorrect={() => newEntry(scenarios[number], EVENTS.pwPracticeBad)}
           />
