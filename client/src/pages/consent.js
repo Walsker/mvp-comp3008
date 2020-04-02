@@ -17,7 +17,7 @@ const Consent = () => (
       Before we begin, you will need to agree with terms laid out in the consent form linked below.
     </div>
     <div id={styles.buttonContainer}>
-      <Button label='Consent Form' href='https://walsquared.ca' /> {/* TODO: link the consent form*/}
+      <Button label='Consent Form' href='https://hotsoft.carleton.ca/comp3008limesurvey/index.php/266286?lang=en' />
       <Button label='Next' linkTo='/instructions' />
     </div>
   </div>

@@ -33,7 +33,7 @@ const Completion = () => {
         <br />
         Once complete, you are safe to close this page.
       </div>
-      <Button label='Questionnaire' href='https://walsquared.ca' /> {/* TODO: Link questionnaire */}
+      <Button label='Questionnaire' href='https://hotsoft.carleton.ca/comp3008limesurvey/index.php/467899?lang=en' />
     </div>
   )
 }

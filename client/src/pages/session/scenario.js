@@ -5,7 +5,6 @@ import { newEntry, EVENTS } from 'helpers/logger'
 
 const scenarios = ['Email', 'Banking', 'School']
 
-// TODO: Pass in the sequence to display
 const Scenario = ({ number, password, next }) => {
   console.log(`Scenario: ${number}, Password: ${password}`)
   useEffect(() => {
