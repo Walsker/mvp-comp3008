@@ -12,6 +12,6 @@
   "scripts": {
     "client:start": "yarn --cwd client start",
     "client:build": "yarn --cwd client build",
-    "start": "node index.js"
+    "start": "yarn client:build && node index.js"
   }
 }

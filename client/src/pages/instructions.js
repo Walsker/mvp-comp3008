@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'components'
-import Example from 'assets/example.gif'
+import Example from 'assets/example.png'
 import OrderImg from 'assets/order.png'
 import styles from './instructions.module.css'
 
@@ -23,7 +23,7 @@ const Instructions = () => (
       <div className={styles.quadrant}>
         <div style={{ marginBottom: 20 }}>
           You will be provided with three randomly generated passwords, one for each scenario. Once you’ve practiced
-          with all three passwords you will be asked to re-enter them in an random order.
+          with all three passwords you will be asked to re-enter them in a random order.
         </div>
         <div>
           You will have three attempts for each password before it is considered unsuccessful, much like normal password
