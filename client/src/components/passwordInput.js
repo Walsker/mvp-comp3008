@@ -4,8 +4,7 @@ import styles from './passwordInput.module.css'
 /* This file contains the code for our arrow password scheme. It keeps track 
 of which button on the arrow button pad has been clicked, and executes the
 respective button click event handlers. The button images were created through
-Figma and exported as .png files as an image on top of each HTML arrow button.
-*/
+Figma and exported as .png files as an image on top of each HTML arrow button.*/
 
 const PasswordInput = ({ correctPassword, onCorrect, onIncorrect }) => {
   //Declaring masterPassword as a current state variable, and 
